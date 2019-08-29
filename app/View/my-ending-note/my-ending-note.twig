@@ -12,31 +12,13 @@
 {% block page_content %}
     <div class="container">
         <br>
-        <h3 class="text-info">〜myエンディングノートを書いてみよう〜</h3>
+        <h3 class="text-info">〜myエンディングノートを書いてみよう〜</h3><br>
 
 
         <form>
-          <!-- <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>
-          </div> -->
-
-
-
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="inputLife">人生の歴史</label>
-            <input type="text" class="form-control" id="inputLife" placeholder="例：思い出 転機">
+            <label for="exampleFormControlTextarea1">人生の歴史</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder = "例：思い出 転機"></textarea>
           </div>
 
           <div class="form-group">
@@ -45,6 +27,7 @@
           </div>
 
           <div class="form-group">
+            <i class="fa fa-hospital-o" aria-hidden="true"></i>
             <label for="inputcare">終末期の介護や医療に関する要望</label>
             <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい">
           </div>
@@ -54,34 +37,30 @@
             <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい">
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">その他</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder = "例：困っているときに助けてくれてありがとう。みんなに感謝"></textarea>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="gridCheck">
               <label class="form-check-label" for="gridCheck">
                 Check me out
               </label>
             </div>
+          </div> -->
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>0</option>
+              <option>1</option>
+
+            </select>
           </div>
 
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">Save</button>
         </form>
 
 

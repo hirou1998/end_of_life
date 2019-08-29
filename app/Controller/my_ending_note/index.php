@@ -38,7 +38,7 @@ $app->post('/my_ending_note/', function (Request $request, Response $response) {
 
 });
 
-$app->get('/my-ending-not/edit/', function (Request $request, Response $response) {
+$app->get('/my-ending-note/edit/', function (Request $request, Response $response) {
 
     //GETされた内容を取得します。
     $data = $request->getQueryParams();

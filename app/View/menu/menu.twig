@@ -1,42 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">TOP</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="Navber">
-        <ul class="navbar-nav mr-auto">
-            {% if session.user_info  =="" %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login/">ログイン</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register/">会員登録</a>
-                </li>
-            {% else %}
-                {# ここに↓メニュー追加していく #}
-                {# 一覧ページを出すサンプルURLです #}
-                <li class="nav-item">
-                    <a class="nav-link" href="/item/list/">一覧ページ</a>
-                </li>
-                {# サンプルとして詳細ページの商品番号1番を出すURLです#}
-                <li class="nav-item">
-                    <a class="nav-link" href="/item/detail/1">詳細ページ</a>
-                </li>
-                {# ここに↑メニュー追加していく #}
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout/">ログアウト</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/resign/">退会</a>
-                </li>
-            {% endif %}
-        </ul>
-        {# ログインしてたらユーザー名を出力する#}
-        {% if session.user_info.name %}
-            <ul class="navbar-nav text-right">
-                {{ session.user_info.name }}さん
-            </ul>
+<nav class="col-md-2 d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <a class="navbar-brand" href="/">TOP</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="" id="Navber">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/how-to-write-will">遺言書</a></li>
+            <li class="nav-item"><a class="nav-link" href="/grave">お墓</a></li>
+            <li class="nav-item"><a class="nav-link" href="/funeral-hall">斎場</a></li>
+            <li class="nav-item"><a class="nav-link" href="/ending-note">エンディングノート</a></li>
+            <li class="nav-item"><a class="nav-link" href="/experiece">体験談</a></li>
+            <li class="nav-item"><a class="nav-link" href="/backet-list">死ぬまでにやりたいこと</a></li>
+            <hr>
+        {% if session.user_info  =="" %}
+            <li class="nav-item">
+                <a class="nav-link" href="/register/">会員登録</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">ログイン</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/experience">あなたの体験談</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/my-ending-note">マイエンディングノート</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">ログアウト</a>
+            </li>
+            {#  一旦コメントアウト
+            <li class="nav-item">
+                <a class="nav-link" href="/resign/">退会</a>
+            </li>
+            #}
+            <li class="nav-item">
+                {{ session.user_info.name }}さん 
+            </li>
+            <hr>
         {% endif %}
+        </ul>
     </div><!-- /.navbar-collapse -->
+    </div>
 </nav>

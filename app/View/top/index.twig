@@ -28,7 +28,9 @@
                                     <li class="list-group-item card-text">望み：{{ item.my_desire}}</li>
                                     <li class="list-group-item card-text">どんな葬式：{{ item.my_funeral}}</li>
                                     <li class="list-group-item card-text">コメント：{{ item.my_comment}}</li>
-                                    <li class="list-group-item card-text">いいね：{{ item.favorite}}</li>
+                                    <li class="list-group-item card-text">いいね：
+                                        <input class="btn btn-dark countup" id="{{item.user_id}}" type="button" name="count" value="{{ item.favorite}}">
+                                    </li>
                                 </ul>
                             {% endif %}
                         {% endfor %}
@@ -40,4 +42,20 @@
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
-{% block footer_scripts_add %}{% endblock %}
+{% block footer_scripts_add %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>        
+$(function(){
+  $('.countup').click(function(){
+      var target = $(this).attr('id')
+    $.ajax({
+            type: 'GET',
+            url: '/favorite/'+ $(this).attr('id'), //post送信を受けとるphpファイル
+        }).done(function(data){
+            $("#"+target).val(data);
+        }).fail(function(msg) {
+            console.log('Ajax Error');
+        });
+    });
+});</script>
+{% endblock %}

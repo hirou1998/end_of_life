@@ -69,7 +69,29 @@
             <a href="#" class="card-link">URL</a>
           </div>
         </div>
+        <button type="submit">search</button>
+      </form>
     </div>
+    <div>
+      <table>
+        {% for result in funeral_hall_list %}
+          <tr>
+            <td>
+              {{result.funeral_hall_name}}
+            </td>
+            <td>
+              {{result.funeral_hall_adress}}
+            </td>
+            <td>
+              {{result.funeral_hall_telephone}}
+            </td>
+            <td>
+              {{result.funeral_hall_url}}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div> -->
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

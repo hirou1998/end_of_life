@@ -1,46 +1,44 @@
-<nav class="col-md-2 d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
-        <a class="navbar-brand" href="/">TOP</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sidebar">
+        <a class="navbar-brand" href="/">終活</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
             <span class="navbar-toggler-icon"></span>
         </button>
-    <div class="" id="Navber">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="/how-to-write-will">遺言書</a></li>
-            <li class="nav-item"><a class="nav-link" href="/grave">お墓</a></li>
-            <li class="nav-item"><a class="nav-link" href="/funeral-hall">斎場</a></li>
-            <li class="nav-item"><a class="nav-link" href="/ending-note">エンディングノート</a></li>
-            <li class="nav-item"><a class="nav-link" href="/experiece">体験談</a></li>
-            <li class="nav-item"><a class="nav-link" href="/backet-list">死ぬまでにやりたいこと</a></li>
-            <hr>
-        {% if session.user_info  =="" %}
-            <li class="nav-item">
-                <a class="nav-link" href="/register/">会員登録</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login/">ログイン</a>
-            </li>
-        {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="/experience">あなたの体験談</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/my-ending-note">マイエンディングノート</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout/">ログアウト</a>
-            </li>
-            {#  一旦コメントアウト
-            <li class="nav-item">
-                <a class="nav-link" href="/resign/">退会</a>
-            </li>
-            #}
-            <li class="nav-item">
-                {{ session.user_info.name }}さん 
-            </li>
-            <hr>
-        {% endif %}
-        </ul>
-    </div><!-- /.navbar-collapse -->
-    </div>
+        <div class="collapse navbar-collapse" id="Navber">
+            <ul class="list-unstyled">
+                <li class="nav-item"><a class="nav-link" href="/how-to-write-will">遺言書</a></li>
+                <li class="nav-item"><a class="nav-link" href="/grave">お墓</a></li>
+                <li class="nav-item"><a class="nav-link" href="/funeral-hall">斎場</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ending-note">エンディングノート</a></li>
+                <li class="nav-item"><a class="nav-link" href="/experience">体験談</a></li>
+                <hr>
+            {% if session.user_info  =="" %}
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold btn btn-outline-info" href="/register/">会員登録</a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold btn btn-outline-primary" href="/login/">ログイン</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/backet-list">死ぬまでにやりたいこと</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/experience">あなたの体験談</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/my-ending-note">マイエンディングノート</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-secondary" href="/logout/">ログアウト</a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold btn btn-outline-info" href="/mypage">
+                        {{ session.user_info.name }}さん 
+                    </a>
+                </li>
+            {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
 </nav>

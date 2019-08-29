@@ -11,7 +11,7 @@
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
 
-    <br><h4 class = "text-info"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
+    <br><h4 class = "text-primary"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
     <div>
       >>>show my ending note!<<<
       <ul class = "list-unstyled">
@@ -37,7 +37,10 @@
           {{ my_ending_note.favorite }}
         </li>
       </ul>
-      <a href="my-ending-note/edit/">編集する</a>
+      <a href="my-ending-note/edit/">エンディングノートを編集する</a><br>
+      <!-- <button type="button" class="btn btn-outline-primary">エンディングノートを編集</button> -->
+      <br><button type="button" class="btn btn-outline-primary">プロフィールを変更する</button>
+
     </div>
 {% endblock %}
 

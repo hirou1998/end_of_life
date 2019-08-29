@@ -12,40 +12,62 @@
 {% block page_content %}
     <div class="container">
         <br>
-        <div class="page-header text-center">
-            <h4>{{ result.name }}</h4>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <img src="{{ result.image_url }}" class="img-fluid">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {{ result.spec }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>{{ result.price |number_format }}円</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col align-bottom">
-                        <br>
-                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>　カートへ追加する　　</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <b>{{ result.spec }}</b>
-                <hr>
-                {{ result.detail | nl2br }}
-            </div>
+
+        <!-- <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name = "name" placeholder = "会場名">
+          </div>
+        </form>
+
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name = "adress" placeholder = "住所">
+          </div>
+        </form> -->
+
+
+
+        <!-- <form>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="name" placeholder="斎場名">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="住所">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form> -->
+
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only">斎場名</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="斎場名" name = "name">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form>
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only">住所</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="住所" name = "adress">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form><br>
+
+
+
+        <div class="card" style="width">
+          <div class="card-body">
+            <h5 class="card-title">斎場名</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">住所：</li>
+            <li class="list-group-item">TEL：</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">URL</a>
+          </div>
         </div>
     </div>
 {% endblock %}

@@ -12,63 +12,47 @@
 {% block page_content %}
     <div class="container">
         <br>
-        <form>
-          <div class="form-row align-items-center">
-            <div class="col-auto">
-              <label class="sr-only" for="inlineFormInput">Name</label>
-              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="斎場名">
-            </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
-            </div>
+
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inlineFormInput" class="sr-only">斎場名</label>
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="斎場名" name = "name">
           </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
         </form>
 
-        <form>
-          <div class="form-row align-items-center">
-            <div class="col-auto">
-              <label class="sr-only" for="inlineFormInput">Adress</label>
-              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="住所">
-            </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
-            </div>
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inlineFormInput" class="sr-only">住所</label>
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="住所" name = "adress">
           </div>
-        </form>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form><br>
 
-
-
-        <div class="card" style="width">
-          <div class="card-body">
-            <h5 class="card-title">斎場名</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">住所：</li>
-            <li class="list-group-item">TEL：</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">URL</a>
-          </div>
-        </div>
-      </form>
     </div>
     <div>
       <table>
         {% for result in funeral_hall_list %}
-          <tr>
-            <td>
-              {{result.funeral_hall_name}}
-            </td>
-            <td>
-              {{result.funeral_hall_adress}}
-            </td>
-            <td>
-              {{result.funeral_hall_telephone}}
-            </td>
-            <td>
-              {{result.funeral_hall_url}}
-            </td>
-          </tr>
+          <div class="card" style="width">
+            <div class="card-body">
+              <h5 class="card-title">斎場名</h5>{{result.funeral_hall_name}}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">住所：{{result.funeral_hall_adress}}</li>
+              <li class="list-group-item">TEL：{{result.funeral_hall_telephone}}</li>
+            </ul>
+            <div class="card-body">
+              <li class="list-group-item">
+
+                {% if result.funeral_hall_url | length > 3 and result.funeral_hall_url is not empty %}
+                URL：<a href="{{result.funeral_hall_url}}" class="card-link">{{result.funeral_hall_url}}</a>
+                {% else %}
+                URLはありません
+                {% endif %}
+              </li>
+            </div>
+          </div>
         {% endfor %}
       </table>
     </div>

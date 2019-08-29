@@ -10,35 +10,38 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-
-    <br><h4 class = "text-info"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
-    <div>
-      >>>show my ending note!<<<
-      <ul class = "list-unstyled">
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>人生の歴史：
-          {{ my_ending_note.my_history }}
-        </li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>親族や友人知人：
-          {{ my_ending_note.my_friends_relatives }}
-        </li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>財産：
-          {{ my_ending_note.my_property }}
-        </li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>終末期の介護や医療に関する要望：
-          {{ my_ending_note.my_desire }}
-        </li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>葬儀に関する要望：
-          {{ my_ending_note.my_funeral }}
-        </li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>その他：
-          {{ my_ending_note.my_comment }}
-        </li><br>
-        <li>いいね<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>：
-          {{ my_ending_note.favorite }}
-        </li>
-      </ul>
-      <a href="my-ending-note/edit/">編集する</a>
-    </div>
+<br><h4 class = "text-info"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
+<div>
+  >>>show my ending note!<<<
+  <ul class = "list-unstyled">
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>人生の歴史：
+      {{ my_ending_note.my_history }}
+    </li>
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>親族や友人知人：
+      {{ my_ending_note.my_friends_relatives }}
+    </li>
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>財産：
+      {{ my_ending_note.my_property }}
+    </li>
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>終末期の介護や医療に関する要望：
+      {{ my_ending_note.my_desire }}
+    </li>
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>葬儀に関する要望：
+      {{ my_ending_note.my_funeral }}
+    </li>
+    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>その他：
+      {{ my_ending_note.my_comment }}
+    </li><br>
+    <li>いいね<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>：
+      {{ my_ending_note.favorite }}
+    </li>
+  </ul>
+  <a href="my-ending-note/edit/">編集する</a>
+</div>
+<hr>
+<div class="justify-content-center">
+    <a class="btn btn-outline-dark btn-sm" href="/resign/">退会する</a>
+</div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

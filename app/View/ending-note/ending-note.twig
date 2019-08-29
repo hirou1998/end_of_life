@@ -1,54 +1,117 @@
-{#レイアウトを継承します#}
-{% extends "layout/layout.twig" %}
+{#レイアウトを継承します#}	
+{% extends "layout/layout.twig" %}	
 
-{#HTMLのタイトルを定義します。#}
-{% block title %}{{ result.name }}エンディングノート{% endblock %}
+ {#HTMLのタイトルを定義します。#}	
+{% block title %}{{ result.name }}エンディングノート{% endblock %}	
 
-{# このページに適用させたいスタイルシートを指定します #}
-{% block header_scripts_add %}
-{% endblock %}
+ {# このページに適用させたいスタイルシートを指定します #}	
+{% block header_scripts_add %}	
+{% endblock %}	
 
-{#ここから表示したい情報を記載します。#}
-{% block page_content %}
-    <div class="container">
-        <br>
-        <div class="page-header text-center">
-            <h4>{{ result.name }}</h4>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <img src="{{ result.image_url }}" class="img-fluid">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {{ result.spec }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>{{ result.price |number_format }}円</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col align-bottom">
-                        <br>
-                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>　カートへ追加する　　</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <b>{{ result.spec }}</b>
-                <hr>
-                {{ result.detail | nl2br }}
-            </div>
-        </div>
-    </div>
-{% endblock %}
+ {#ここから表示したい情報を記載します。#}	
+{% block page_content %}	
+    <div class="container">	
+        <!-- <br>	
+        <div class = "explanation">	
+          <h1 class = "title"></h1>	
+          <div class="explanation_sentencs">	
+            <p></p>	
+          </div>	
+        </div> -->	
 
-{#共通フッタとして追記したい情報を記載します。#}
+
+         <br>	
+        <div class="row">	
+          <div class="col-sm-12">	
+            <div class="card">	
+              <div class="card-body">	
+                <h3 class="text-info card-title">エンディングノートとは？？</h3>	
+                <p class="card-text">エンディングノートとは、終活に関することを書き込んで、全体像を把握し、情報を家族に残すものです。</p>	
+              </div>	
+            </div>	
+          </div>	
+        </div>	
+        <br>	
+
+
+
+
+
+
+
+
+         <!-- <div class = "what_content">	
+          <h1 class = "title"></h1>何を書くの？></h1>	
+          <div class = "content_sentence">	
+          </div>	
+        </div> -->	
+
+
+
+         <div class="row">	
+          <div class="col-sm-12">	
+            <div class="card">	
+              <div class="card-body">	
+                <h3 class="text-info card-title">何を書くの？？</h3>	
+                <p class="card-text">エンディングノートは主に以下のような内容が記入されます....！…</p>	
+
+                 <ul>	
+                  <li>自分の人生の歴史</li>	
+                  <li>親族や友人、知人の情報</li>	
+                  <li>財産の情報（貯金・証券・保険・不動産・年金・借金...）</li>	
+                  <li>終末期の介護や医療に関する要望</li>	
+                  <li>葬儀に関する要望</li>	
+                  <li>その他</li>	
+                </ul>	
+                <p>自分の人生を振り返って、やり残したことをやったり、いざという時には家族の負担を軽減します。</p>	
+                <p>遺言書と違って、法的拘束力を持たないので、そこは注意が必要です;</p>	
+
+               </div>	
+            </div>	
+          </div>	
+        </div>	
+        <br>	
+
+
+
+       <!-- <div class="example">	
+          <br>	
+          <div class = "explanation">	
+            <h1 class = "title"></h1>	
+            <div class="explanation_sentencs">	
+              <p></p>	
+            </div>	
+          </div> -->	
+
+
+
+       <div class="row">	
+        <div class="col-sm-12">	
+          <div class="card">	
+            <div class="card-body">	
+              <h4 class="text-info card-title">書き方の例</h4>	
+
+               <ul>	
+                <li>山田花子 79歳。AB型の子年。8年前に夫が他界してからは娘夫婦と暮らしてる。<br>	
+                    幼い頃から憧れていた学校の先生として30年間働いた。	
+                    趣味は若い頃から編み物で、冬が近づくとよくマフラーや手袋などを編んでいた。	
+                    人生のターニングポイントは旦那とは職場で出会い。のちに結婚。娘は一人で、5年前に孫の顔を見た。	
+                </li>	
+                <li>旦那が他界した際、同じ卓球仲間の田中さんと笹本さんにはとてもお世話になった。	
+                    一緒に暮らしてる娘夫婦にも感謝している。	
+                </li>	
+                <li>貯金は800万ほど。借金などはない。</li>	
+                <li>最期は自宅で家族に見届けて欲しいので、病院に世話になることがあれば延命治療は不要</li>	
+                <li>お金がかかるので、身内内だけでいい</li>	
+                <li>なんだかんだ言って楽しい人生だった、みんなありがとう</li>	
+              </ul>	
+
+             </div>	
+          </div>	
+        </div>	
+      </div>	
+    </div>	
+{% endblock %}	
+
+ {#共通フッタとして追記したい情報を記載します。#}	
 {% block footer_scripts_add %}{% endblock %}

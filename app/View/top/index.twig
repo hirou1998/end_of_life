@@ -16,7 +16,25 @@
     <div class="container">
         <div class="box">
             <div class="row">
-                ここにコンテンツが入る
+                        <div>
+                            <h2>エンディングノートタイムライン</h2>
+                            <ul>
+                                {% for item in list %}
+                                    {% if item.is_public %}
+                                        <li>
+                                                名前：{{ item.name}}                    <br>    
+                                                歴史：{{ item.my_history}}              <br>           
+                                                友達：{{ item.my_friends_relatives}}      <br>                   
+                                                資産：{{ item.my_property}}               <br>          
+                                                望み：{{ item.my_desire}}                 <br>        
+                                                どんな葬式：{{ item.my_funeral}}           <br>              
+                                                コメント：{{ item.my_comment}}             <br>            
+                                                いいね：{{ item.favorite}}                 <br>      
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
             </div>
         </div>
     </div>

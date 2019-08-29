@@ -1,0 +1,46 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}{{ result.name }}My Page{% endblock %}
+
+{# このページに適用させたいスタイルシートを指定します #}
+{% block header_scripts_add %}
+{% endblock %}
+
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+    <p>
+      my page
+    </p>
+    <div>
+      show my ending note
+      <ul>
+        <li>
+          {{ my_ending_note.my_history }}
+        </li>
+        <li>
+          {{ my_ending_note.my_friends_relatives }}
+        </li>
+        <li>
+          {{ my_ending_note.my_property }}
+        </li>
+        <li>
+          {{ my_ending_note.my_desire }}
+        </li>
+        <li>
+          {{ my_ending_note.my_funeral }}
+        </li>
+        <li>
+          {{ my_ending_note.my_comment }}
+        </li>
+        <li>
+          {{ my_ending_note.favorite }}
+        </li>
+      </ul>
+      <a href="my-ending-note/edit/">編集する</a>
+    </div>
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+{% block footer_scripts_add %}{% endblock %}

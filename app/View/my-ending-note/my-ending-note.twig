@@ -1,54 +1,86 @@
-{#レイアウトを継承します#}
-{% extends "layout/layout.twig" %}
-
-{#HTMLのタイトルを定義します。#}
-{% block title %}{{ result.name }}マイエンディングノート{% endblock %}
-
-{# このページに適用させたいスタイルシートを指定します #}
-{% block header_scripts_add %}
-{% endblock %}
-
-{#ここから表示したい情報を記載します。#}    
-{% block page_content %}
-    <div class="container">
-        <br>
-        <div class="page-header text-center">
-            <h4>{{ result.name }}</h4>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <img src="{{ result.image_url }}" class="img-fluid">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {{ result.spec }}
-                    </div>
+{
+    Error: Parse error on line 1:
+    {#レイアウトを継承します#}{% ex
+    -^
+    Expecting 'STRING', '}'
+    #レイアウトを継承します#}
+    {% extends "layout/layout.twig" %}
+    
+    {#HTMLのタイトルを定義します。#}
+    {% block title %}{{ result.name }}マイエンディングノート{% endblock %}
+    
+    {# このページに適用させたいスタイルシートを指定します #}
+    {% block header_scripts_add %}
+    {% endblock %}
+    
+    {#ここから表示したい情報を記載します。#}
+    {% block page_content %}
+        <div class="container">
+            <br>
+            <h3 class="text-info">〜myエンディングノートを書いてみよう〜</h3>
+    
+    
+            <form method="POST" action="/my_ending_note/">
+              <!-- <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>{{ result.price |number_format }}円</h1>
-                    </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
                 </div>
-                <div class="row">
-                    <div class="col align-bottom">
-                        <br>
-                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>　カートへ追加する　　</button>
-                    </div>
+              </div> -->
+    
+    
+    
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">人生の歴史</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="my_history"></textarea>
+              </div>
+    
+              <div class="form-group">
+                <label for="inputgoodperson">親族や友人知人</label>
+                <input type="text" class="form-control" id="inputgoodperson" placeholder="例：同じ卓球仲間の笹本さん" name="my_friends_relatives">
+              </div>
+    
+              <div class="form-group">
+                <label for="inputcare">財産</label></label>
+                <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_property">
+              </div>
+    
+              <div class="form-group">
+                <label for="inputcare">終末期の介護や医療に関する要望</label>
+                <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_desire">
+              </div>
+    
+              <div class="form-group">
+                <label for="inputfuneral">葬儀に関する要望</label>
+                <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい" name="my_funeral">
+              </div>
+    
+              <div class="form-group">
+                <label for="inputcare">その他</label>
+                <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_omment">
+              </div>
+    
+              <div class="form-group">
+                <div class="form-check">
+                  <select name="is_public">
+                    <option value="0">
+                      非公開
+                    </option>
+                    <option value="1">
+                      公開
+                    </option>
+                  </select>
                 </div>
-            </div>
+              </div>
+    
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <b>{{ result.spec }}</b>
-                <hr>
-                {{ result.detail | nl2br }}
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-{#共通フッタとして追記したい情報を記載します。#}
-{% block footer_scripts_add %}{% endblock %}
+    {% endblock %}
+    
+    {#共通フッタとして追記したい情報を記載します。#}
+    {% block footer_scripts_add %}{% endblock %}

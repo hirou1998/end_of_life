@@ -23,6 +23,8 @@ $app->post('/my_ending_note/', function (Request $request, Response $response) {
 
     $my_ending_note = $this->db;
 
+    $my_ending_note->delete('my_ending_note', array('user_id' => $user_id));
+
     $my_ending_note->insert('my_ending_note',
                             array("user_id" => $user_id,
                                   "my_history" => $data['my_history'],

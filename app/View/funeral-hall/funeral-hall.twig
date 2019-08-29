@@ -39,7 +39,22 @@
         </form> -->
 
 
-        <form class="form-inline">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="斎場名" name = "name">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form>
+
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="住所" name = "adress">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form>
+
+
+        <!-- <form class="form-inline">
           <div class="form-group mx-sm-3 mb-2">
             <label for="inputPassword2" class="sr-only">斎場名</label>
             <input type="password" class="form-control" id="inputPassword2" placeholder="斎場名" name = "name">
@@ -53,7 +68,7 @@
             <input type="password" class="form-control" id="inputPassword2" placeholder="住所" name = "adress">
           </div>
           <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
-        </form><br>
+        </form><br> -->
 
 
 
@@ -69,7 +84,6 @@
             <a href="#" class="card-link">URL</a>
           </div>
         </div>
-        <button type="submit">search</button>
       </form>
     </div>
     <div>
@@ -91,7 +105,7 @@
           </tr>
         {% endfor %}
       </table>
-    </div> -->
+    </div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

@@ -17,10 +17,10 @@
             <div class="row">
                 <div>
                     <h2 class="text-center">エンディングノートタイムライン</h2>
-
+                        <div class="card-columns">
                         {% for item in list %}
                             {% if item.is_public %}
-                                <ul class="card bg-secondary mb-3 justify-content-center">                            
+                                <ul class="card bg-secondary mb-3">                            
                                     <li class="list-unstyled card-header text-white">{{ item.name}}さん</li>
                                     <li class="list-group-item card-text">歴史：{{ item.my_history}}</li>
                                     <li class="list-group-item card-text">友達：{{ item.my_friends_relatives}}</li>
@@ -32,6 +32,7 @@
                                 </ul>
                             {% endif %}
                         {% endfor %}
+                        </div>
                         
                 </div>
             </div>

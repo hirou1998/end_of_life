@@ -15,39 +15,48 @@
         <h3 class="text-info">〜myエンディングノートを書いてみよう〜</h3><br>
 
 
-        <form>
+        <form method="POST" action="/my_ending_note/">
           <div class="form-group">
             <label for="exampleFormControlTextarea1">人生の歴史</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder = "例：思い出 転機"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="my_history"></textarea>
           </div>
 
           <div class="form-group">
             <label for="inputgoodperson">親族や友人知人</label>
-            <input type="text" class="form-control" id="inputgoodperson" placeholder="例：同じ卓球仲間の笹本さん">
+            <input type="text" class="form-control" id="inputgoodperson" placeholder="例：同じ卓球仲間の笹本さん" name="my_friends_relatives">
+          </div>
+
+          <div class="form-group">
+            <label for="inputcare">財産</label></label>
+            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_property">
           </div>
 
           <div class="form-group">
             <i class="fa fa-hospital-o" aria-hidden="true"></i>
             <label for="inputcare">終末期の介護や医療に関する要望</label>
-            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい">
+            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_desire">
           </div>
 
           <div class="form-group">
             <label for="inputfuneral">葬儀に関する要望</label>
-            <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい">
+            <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい" name="my_funeral">
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">その他</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder = "例：困っているときに助けてくれてありがとう。みんなに感謝"></textarea>
+            <label for="inputcare">その他</label>
+            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_omment">
           </div>
 
           <!-- <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
+              <select name="is_public">
+                <option value="0">
+                  非公開
+                </option>
+                <option value="1">
+                  公開
+                </option>
+              </select>
             </div>
           </div> -->
 
@@ -62,12 +71,6 @@
 
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
-
-
-
-
-
-
     </div>
 {% endblock %}
 

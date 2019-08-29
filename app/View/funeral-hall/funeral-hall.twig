@@ -10,44 +10,43 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="container">
-        <br>
-        <div class="page-header text-center">
-            <h4>{{ result.name }}</h4>
+    <!-- <div>
+      <form method="get">
+        <div>
+          <p>
+            name
+          </p>
+          <input name="name" type="text" />
         </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <img src="{{ result.image_url }}" class="img-fluid">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {{ result.spec }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>{{ result.price |number_format }}円</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col align-bottom">
-                        <br>
-                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>　カートへ追加する　　</button>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <p>
+            location
+          </p>
+          <input name="adress" type="text" />
         </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <b>{{ result.spec }}</b>
-                <hr>
-                {{ result.detail | nl2br }}
-            </div>
-        </div>
+        <button type="submit">search</button>
+      </form>
     </div>
+    <div>
+      <table>
+        {% for result in funeral_hall_list %}
+          <tr>
+            <td>
+              {{result.funeral_hall_name}}
+            </td>
+            <td>
+              {{result.funeral_hall_adress}}
+            </td>
+            <td>
+              {{result.funeral_hall_telephone}}
+            </td>
+            <td>
+              {{result.funeral_hall_url}}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div> -->
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

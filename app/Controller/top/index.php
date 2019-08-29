@@ -15,7 +15,6 @@ $app->get('/', function (Request $request, Response $response) {
     $stmt->execute();
 
     $list = $stmt->fetchAll();
-    var_dump($list);
 
     $data =[
         "list" => $list,
@@ -24,4 +23,3 @@ $app->get('/', function (Request $request, Response $response) {
     // Render index view
     return $this->view->render($response, 'top/index.twig', $data);
 });
-

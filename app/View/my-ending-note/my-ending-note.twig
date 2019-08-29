@@ -8,45 +8,87 @@
 {% block header_scripts_add %}
 {% endblock %}
 
-{#ここから表示したい情報を記載します。#}    
+{#ここから表示したい情報を記載します。#}
 {% block page_content %}
     <div class="container">
         <br>
-        <div class="page-header text-center">
-            <h4>{{ result.name }}</h4>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <img src="{{ result.image_url }}" class="img-fluid">
+        <h3 class="text-info">〜myエンディングノートを書いてみよう〜</h3>
+
+
+        <form>
+          <!-- <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        {{ result.spec }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>{{ result.price |number_format }}円</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col align-bottom">
-                        <br>
-                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>　カートへ追加する　　</button>
-                    </div>
-                </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
             </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <b>{{ result.spec }}</b>
-                <hr>
-                {{ result.detail | nl2br }}
+          </div> -->
+
+
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="inputLife">人生の歴史</label>
+            <input type="text" class="form-control" id="inputLife" placeholder="例：思い出 転機">
+          </div>
+
+          <div class="form-group">
+            <label for="inputgoodperson">親族や友人知人</label>
+            <input type="text" class="form-control" id="inputgoodperson" placeholder="例：同じ卓球仲間の笹本さん">
+          </div>
+
+          <div class="form-group">
+            <label for="inputcare">終末期の介護や医療に関する要望</label>
+            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい">
+          </div>
+
+          <div class="form-group">
+            <label for="inputfuneral">葬儀に関する要望</label>
+            <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
             </div>
-        </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+
+
+
+
+
+
     </div>
 {% endblock %}
 

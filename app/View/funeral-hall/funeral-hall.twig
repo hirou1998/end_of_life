@@ -10,19 +10,64 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <!-- <div>
-      <form method="get">
-        <div>
-          <p>
-            name
-          </p>
-          <input name="name" type="text" />
-        </div>
-        <div>
-          <p>
-            location
-          </p>
-          <input name="adress" type="text" />
+    <div class="container">
+        <br>
+
+        <!-- <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name = "name" placeholder = "会場名">
+          </div>
+        </form>
+
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name = "adress" placeholder = "住所">
+          </div>
+        </form> -->
+
+
+
+        <!-- <form>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="name" placeholder="斎場名">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="住所">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form> -->
+
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only">斎場名</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="斎場名" name = "name">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form>
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only">住所</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="住所" name = "adress">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form><br>
+
+
+
+        <div class="card" style="width">
+          <div class="card-body">
+            <h5 class="card-title">斎場名</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">住所：</li>
+            <li class="list-group-item">TEL：</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">URL</a>
+          </div>
         </div>
         <button type="submit">search</button>
       </form>

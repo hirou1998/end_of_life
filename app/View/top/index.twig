@@ -6,6 +6,8 @@
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
@@ -29,7 +31,7 @@
                                     <li class="list-group-item card-text">どんな葬式：{{ item.my_funeral}}</li>
                                     <li class="list-group-item card-text">コメント：{{ item.my_comment}}</li>
                                     <li class="list-group-item card-text">いいね：
-                                        <input class="btn btn-dark countup" id="{{item.user_id}}" type="button" name="count" value="{{ item.favorite}}">
+                                        <button class="btn btn-dark countup" id="{{item.user_id}}" type="button" name="count"><i class="fas fa-pray"></i>{{ item.favorite}}</button>
                                     </li>
                                 </ul>
                             {% endif %}
@@ -52,7 +54,7 @@ $(function(){
             type: 'GET',
             url: '/favorite/'+ $(this).attr('id'), //post送信を受けとるphpファイル
         }).done(function(data){
-            $("#"+target).val(data);
+            $("#"+target).html('<i class="fas fa-pray"></i>'+ data);
         }).fail(function(msg) {
             console.log('Ajax Error');
         });

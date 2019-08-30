@@ -12,13 +12,13 @@
 {% block page_content %}
     <div class="container">
         <br>
-        
+
         <!-- 検索 -->
         <form>
           <div class="form-row align-items-center">
             <div class="col-auto">
               <label class="sr-only" for="inlineFormInput">name</label>
-              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="斎場名">
+              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="霊園名">
             </div>
             <div class="col-auto">
               <label class="sr-only" for="inlineFormInputGroup">adress</label>
@@ -41,7 +41,7 @@
         {% for result in graveyard_list %}
           <div class="card" style="width">
             <div class="card-body">
-              <h5 class="card-title">斎場名</h5>{{result.graveyard_name}}
+              <h5 class="card-title">{{result.graveyard_name}}</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">住所：{{result.graveyard_adress}}</li>
@@ -57,7 +57,7 @@
                 {% endif %}
               </li>
             </div>
-          </div>
+          </div><br>
         {% endfor %}
       </table>
     </div>

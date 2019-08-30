@@ -16,86 +16,89 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-<div>
-    <br><h4 class = "text-primary"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4 class = "text-primary"><i class="fa fa-user-circle" aria-hidden="true"></i> my page</h4>
     <div>
       <p>私のエンディングノート</p>
-      
-      <div class="row">	
-          <div class="col-sm-12">	
-            <div class="card">	
-              <div class="card-body">	
-                <h4 class="text-primary card-title"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</h4>	
-                <p class="card-text">{{ my_ending_note.my_history }}</p>	
-              </div>	
-            </div>
-          </div>	
-        </div>
-        <br>	
 
-        <div class="row">	
-          <div class="col-sm-12">	        
-            <div class="card">	
-              <div class="card-body">	
-                <h4 class="text-primary card-title"><i class="fas fa-user-friends" aria-hidden="true"></i> 親族や友人知人</h4>	
-                <p class="card-text">{{ my_ending_note.my_friends_relatives }}</p>	
-              </div>	
+      <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="text-primary card-title"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</h4>
+                <p class="card-text">{{ my_ending_note.my_history }}</p>
+              </div>
             </div>
-          </div>	
+          </div>
         </div>
-        <br>	
-  
-        <div class="row">	
-            <div class="col-sm-12">	          
-            <div class="card">	
-              <div class="card-body">	
-                <h4 class="text-primary card-title"><i class="fa fa-home" aria-hidden="true"></i> 財産</h4>	
-                <p class="card-text">{{ my_ending_note.my_property }}</p>	
-              </div>	
-            </div>
-          </div>	
-        </div>
-        <br>	
+        <br>
 
-        <div class="row">	
-            <div class="col-sm-12">	          
-            <div class="card">	
-              <div class="card-body">	
-                <h4 class="text-primary card-title"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</h4>	
-                <p class="card-text">{{ my_ending_note.my_desire }}</p>	
-              </div>	
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="text-primary card-title"><i class="fas fa-user-friends" aria-hidden="true"></i> 親族や友人知人</h4>
+                <p class="card-text">{{ my_ending_note.my_friends_relatives }}</p>
+              </div>
             </div>
-          </div>	
+          </div>
         </div>
-        <br>	
+        <br>
 
-        <div class="row">	
-            <div class="col-sm-12">	          
-            <div class="card">	
-              <div class="card-body">	
-                <h4 class="text-primary card-title"><i class="far fa-comment"　aria-hidden="true"></i> 葬儀に関する要望</h4>	
-                <p class="card-text">{{ my_ending_note.my_funeral }}</p>	
-              </div>	
+        <div class="row">
+            <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="text-primary card-title"><i class="fa fa-home" aria-hidden="true"></i> 財産</h4>
+                <p class="card-text">{{ my_ending_note.my_property }}</p>
+              </div>
             </div>
-          </div>	
+          </div>
         </div>
-        <br>	
+        <br>
 
-        <div class="row">	
-            <div class="col-sm-12">	          
-            <div class="card">	
-              <div class="card-body">	
+        <div class="row">
+            <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="text-primary card-title"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</h4>
+                <p class="card-text">{{ my_ending_note.my_desire }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="text-primary card-title"><i class="far fa-comment"　aria-hidden="true"></i> 葬儀に関する要望</h4>
+                <p class="card-text">{{ my_ending_note.my_funeral }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
                 <h4 class="text-primary card-title"><i class="fas fa-info-circle" aria-hidden="true"></i> その他</h4>
                 {% if my_ending_note.my_comment %}
                   <p class="card-text">{{ my_ending_note.my_comment }}</p>
                   {% else %}
                   <p class="card-text">特になし。</p>
                 {% endif %}
-              </div>	
+              </div>
             </div>
-          </div>	
+          </div>
         </div>
-        <br>	
+        <br>
         <p>いいね：<i class="fas fa-pray" aria-hidden="true"></i>
           {{ my_ending_note.favorite }}
         </p>

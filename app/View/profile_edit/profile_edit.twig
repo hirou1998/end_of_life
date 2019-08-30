@@ -1,0 +1,55 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}{{ result.name }}My Page{% endblock %}
+
+{# このページに適用させたいスタイルシートを指定します #}
+{% block header_scripts_add %}
+{% endblock %}
+
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+<div class="container">
+  <form method="post" action="/profile_edit/" enctype="multipart/form-data">
+    <div>
+      <p>
+        user_set_name
+      </p>
+      <input name="user_set_name" type="text" value="{{profile.user_set_name}}" />
+    </div>
+    <div>
+      <p>
+        birthday
+      </p>
+      <input name="birthday" type="date" value="{{profile.birthday}}" />
+    </div>
+    <div>
+      <p>
+        location
+      </p>
+      <input name="location" type="text" value="{{profile.location}}" />
+    </div>
+    <div>
+      <p>
+        user_set_name
+      </p>
+      <textarea name="introduction" type="text"/>{{profile.introduction}}</textarea>
+    </div>
+    <div>
+      <p>
+        img
+      </p>
+      <input name="img" type="file" value="{{profile.img}}" />
+      {% if profile.img == "" %}
+      {% else %}
+      <img src="{{ profile.img }}" />
+      {% endif %}
+    </div>
+    <button type="submit">SAVE</button>
+  </form>
+</div>
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+{% block footer_scripts_add %}{% endblock %}

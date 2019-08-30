@@ -6,6 +6,35 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
+<style>
+@media(min-width:768px){
+  .mypage_image{
+    border-radius: 50%;
+    width: 100%;
+  }
+  .mypage_info{
+    font-size: 20px;
+  }
+}
+@media(max-width:767px){
+  .mypage_image{
+    border-radius: 50%;
+    width: 100%;
+  }
+  .col-md-2{
+    flex:1;
+  }
+  .col-md-10{
+    flex: 1;
+  }
+  .mypage_info{
+    font-size: 4vw;
+  }
+}
+.row{
+  align-items: center;
+}
+</style>
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
@@ -16,6 +45,16 @@
         <div class="col-sm-12">
             <br><h4><i class="fa fa-user-circle" aria-hidden="true"></i> MY page</h4>
     <div>
+      <div class="row" style="margin: 2vw 0;">
+          <div class="col-md-2">
+              <img class="mypage_image" src="{{ profile.img }}" alt="{{ profile.user_set_name }} さん">
+          </div>
+          <p class="col-md-10 mypage_info">
+              <i class="fas fa-user"></i> {{ profile.user_set_name }} さん<br>
+              <i class="fas fa-globe"></i> {{ profile.location }} <br>
+              <i class="fas fa-birthday-cake"></i> {{ profile.birthday | date("Y年m月d日") }}
+          </p>
+      </div>
       <br>
       <h5 class="text-primary">私のエンディングノート <span class="badge badge-secondary"><i class="fas fa-pray" aria-hidden="true"></i> {{ my_ending_note.favorite }}</span></h5>
 

@@ -17,6 +17,15 @@ $app->get('/mypage', function (Request $request, Response $response) {
 
     $data['my_ending_note'] = $stmt->fetch();
 
+    $stmt = $this->db->prepare("SELECT * FROM profile WHERE user_id = $user_id");
+    $stmt->execute();
+
+    $data['profile'] = $stmt->fetch();
+
+    if($data['profile']['user_set_name'] == ""){
+      $data['profile']['user_set_name'] = $session["name"];
+    }
+
     // Render index view
     return $this->view->render($response, 'mypage/mypage.twig', $data);
 });

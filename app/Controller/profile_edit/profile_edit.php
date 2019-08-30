@@ -5,21 +5,20 @@ use Slim\Http\Response;
 
 $app->get('/profile_edit/', function (Request $request, Response $response) {
 
-    // $data = $request->getQueryParams();
+    $data = $request->getQueryParams();
+
+    $session = $this->session['user_info'];
+    $user_id = $session['id'];
     //
-    // //$my_ending_note = $this->db;
-    //
-    // $session = $this->session['user_info'];
-    // $user_id = $session['id'];
-    //
-    // $stmt = $this->db->prepare("SELECT * FROM my_ending_note WHERE user_id = $user_id");
-    // $stmt->execute();
-    //
-    // $data['my_ending_note'] = $stmt->fetch();
-    $data = [];
+    $stmt = $this->db->prepare("SELECT * FROM profile WHERE user_id = $user_id");
+    $stmt->execute();
+
+    $data['profile'] = $stmt->fetch();
+
+    return $this->view->render($response, 'profile_edit/profile_edit.twig', $data);
 
     // Render index view
-    return $this->view->render($response, 'profile_edit/profile_edit.twig', $data);
+    //return $this->view->render($response, 'profile_edit/profile_edit.twig', $data);
 });
 
 $app->post('/profile_edit/', function (Request $request, Response $response) {

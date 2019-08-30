@@ -52,43 +52,43 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">歴史</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_history | nl2br }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">友達</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="fas fa-user-friends" aria-hidden="true"></i> 親族や友人知人</label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_friends_relatives }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">資産</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="fa fa-home" aria-hidden="true"></i> 財産</label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_property }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">望み</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_desire }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">どんな葬式</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="far fa-comment" aria-hidden="true"></i> 葬儀に関する要望 </label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_funeral }}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">コメント</label>
+                                                        <label for="" class="col-sm-2 col-form-label"><i class="fas fa-info-circle" aria-hidden="true"></i> その他</label>
                                                         <div class="col-sm-10">
                                                             {{ item.my_comment |nl2br}}
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="" class="col-sm-2 col-form-label">いいね</label>
+                                                        <label for="" class="col-sm-2 col-form-label"></label>
                                                         <div class="col-sm-10">
                                                             <button class="btn btn-dark countup" id="{{ item.user_id }}" type="button" name="count"><i class="fas fa-pray"></i> {{ item.favorite }}</button>
                                                         </div>

@@ -39,7 +39,7 @@ $app->post('/profile_edit/', function (Request $request, Response $response) {
     //dd($files);
     $file = $files["img"]->file;
     if($file){
-      $file_path = "/opt/intern/app/team-b1/project/public/assets/img/profile-image-" . $user_id . ".png";
+      $file_path = "/opt/intern/app/team-b/project/public/assets/img/profile-image-" . $user_id . ".png";
       copy($file, $file_path);
     } else {
       $file_path = null;

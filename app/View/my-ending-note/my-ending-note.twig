@@ -6,45 +6,50 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200&display=swap" rel="stylesheet">
+<style>
+    div{ font-family: 'Noto Serif JP', serif; }
+</style>
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
     <div class="container">
         <br>
-        <h3 class="text-primary"><i class="fa fa-pencil" aria-hidden="true"></i>myエンディングノートを書いてみよう!</h3><br>
+        <h3 class="text-primary"><i class="fa fa-pencil" aria-hidden="true"></i> MYエンディングノートを書いてみよう!</h3><br>
 
 
         <form method="POST" action="/my_ending_note/">
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">人生の歴史</label>
+            <label for="exampleFormControlTextarea1"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder= "思い出、転機など" name="my_history">{{ my_ending_note.my_history }}</textarea>
           </div>
 
           <div class="form-group">
-            <label for="inputgoodperson">親族や友人知人</label>
+            <label for="inputgoodperson"><i class="fas fa-user-friends"></i> 親族や友人知人</label>
             <input type="text" class="form-control" id="inputgoodperson" placeholder="例：同じ卓球仲間の笹本さん" name="my_friends_relatives" value="{{ my_ending_note.my_friends_relatives }}">
           </div>
 
           <div class="form-group">
-            <label for="inputcare"><i class="fa fa-home" aria-hidden="true"></i>財産</label></label>
+            <label for="inputcare"><i class="fa fa-home" aria-hidden="true"></i> 財産</label>
             <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_property" value="{{ my_ending_note.my_property }}">
           </div>
 
           <div class="form-group">
-            <i class="fa fa-hospital-o" aria-hidden="true"></i>
-            <label for="inputcare">終末期の介護や医療に関する要望</label>
-            <input type="text" class="form-control" id="form-group" placeholder="例：介護施設で同年代の友達を作りたい" name="my_desire" value="{{ my_ending_note.my_desire }}">
+            <label for="inputcare"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</label>
+            <input type="text" class="form-control" placeholder="例：介護施設で同年代の友達を作りたい" name="my_desire" value="{{ my_ending_note.my_desire }}">
           </div>
 
           <div class="form-group">
-            <label for="inputfuneral">葬儀に関する要望</label>
-            <input type="text" class="form-control" id="form-group" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい" name="my_funeral" value="{{ my_ending_note.my_funeral }}">
+            <label for="inputfuneral"><i class="far fa-comment"　aria-hidden="true"></i> 葬儀に関する要望</label>
+            <input type="text" class="form-control" placeholder="例：お金がかかるので身内だけの規模の小さい式がいい" name="my_funeral" value="{{ my_ending_note.my_funeral }}">
           </div>
 
           <div class="form-group">
-            <label for="inputcare">その他</label>
-            <textarea type="text" class="form-control" id="form-group" placeholder="例：毎日楽しく過ごせている。みんなありがとう" name="my_comment">{{ my_ending_note.my_comment }}</textarea>
+            <label for="inputcare"><i class="fas fa-info-circle"></i> その他</label>
+            <textarea type="text" class="form-control" placeholder="例：毎日楽しく過ごせている。みんなありがとう" name="my_comment">{{ my_ending_note.my_comment }}</textarea>
           </div>
 
           <div class="form-group">
@@ -60,7 +65,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-primary">保存</button>
         </form>
     </div>
 {% endblock %}

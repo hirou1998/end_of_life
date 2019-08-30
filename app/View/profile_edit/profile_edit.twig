@@ -2,7 +2,7 @@
 {% extends "layout/layout.twig" %}
 
 {#HTMLのタイトルを定義します。#}
-{% block title %}{{ result.name }}My Page{% endblock %}
+{% block title %}{{ result.name }}プロフィール変更{% endblock %}
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
@@ -16,9 +16,42 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-<p>
-  aaa
-</p>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-primary"><i class="fa fa-pencil" aria-hidden="true"></i> プロフィール編集</h3><br>
+      <form method="POST" action="/profile_edit/">
+        <div>
+          <div>
+            <label class="mr-4 mb-4"><i class="fas fa-images"></i> 画像</label>
+            <img width="80" src="https://dummyimage.com/320x240/ccc/fff.png&text=img1" id="img" name="img" alt="自分の画像" style="border-radius: 50%; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%;"></div>        <div class="form-group">
+            <p><input type="file" name="upfile" id="upfile" accept="image/*" capture="camera" /></p>
+            <p><input type="submit" name="save" value="保存" /></p>
+          </div>
+          <label><i class="fas fa-user" aria-hidden="true"></i> 名前</label>
+            <input class="form-control" placeholder= "オールドなんちゃら" name="usr_set_name">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-globe" aria-hidden="true"></i> 場所</label>
+          <input class="form-control" placeholder= "オールドなんちゃら" name="usr_set_name">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-birthday-cake" aria-hidden="true"></i> 誕生日</label>
+          <input class="form-control" placeholder= "オールドなんちゃら" name="usr_set_name">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-comments"></i> 一言</label>
+          <textarea class="form-control" rows="4" placeholder= "世界一周でもしようかな" name="introduction"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">保存</button>
+      </form>
+    </div>
+  </div>
+</div>
+          
+
+
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

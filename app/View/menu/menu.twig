@@ -6,10 +6,9 @@
         <div class="collapse navbar-collapse" id="Navber">
             <ul class="list-unstyled">
                 <li class="nav-item"><a class="nav-link" href="/how-to-write-will">遺言書</a></li>
-                <li class="nav-item"><a class="nav-link" href="/grave">お墓</a></li>
-                <li class="nav-item"><a class="nav-link" href="/funeral-hall">斎場</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ending-note">エンディングノート</a></li>
-                <li class="nav-item"><a class="nav-link" href="/experience">体験談</a></li>
+                <li class="nav-item"><a class="nav-link" href="/graveyard">霊園・墓地検索</a></li>
+                <li class="nav-item"><a class="nav-link" href="/funeral-hall">斎場検索</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ending-note">エンディングノートの書き方</a></li>
                 <hr>
             {% if session.user_info  =="" %}
                 <li class="nav-item">
@@ -21,12 +20,6 @@
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/backet-list">死ぬまでにやりたいこと</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/experience">あなたの体験談</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/my-ending-note">マイエンディングノート</a>
                 </li>
                 <li class="nav-item">
@@ -35,7 +28,7 @@
                 <br>
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold btn btn-outline-info" href="/mypage">
-                        {{ session.user_info.name }}さん 
+                        {{ session.user_info.name }}さん
                     </a>
                 </li>
             {% endif %}

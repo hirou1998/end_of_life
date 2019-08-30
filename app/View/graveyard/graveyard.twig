@@ -12,22 +12,27 @@
 {% block page_content %}
     <div class="container">
         <br>
+        
+        <!-- 検索 -->
+        <form>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">name</label>
+              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="斎場名">
+            </div>
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInputGroup">adress</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="住所">
+              </div>
+            </div>
 
-
-        <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2">
-            <label for="inlineFormInput" class="sr-only">斎場名</label>
-            <input type="text" class="form-control" id="inlineFormInput" placeholder="斎場名" name = "name">
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2">検索</button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
-        </form>
-
-        <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2">
-            <label for="inlineFormInput" class="sr-only">住所</label>
-            <input type="text" class="form-control" id="inlineFormInput" placeholder="住所" name = "adress">
-          </div>
-          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
         </form><br>
 
     </div>

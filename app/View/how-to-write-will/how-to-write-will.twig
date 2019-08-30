@@ -1,19 +1,27 @@
-{#レイアウトを継承します#}	
-{% extends "layout/layout.twig" %}	
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
 
- {#HTMLのタイトルを定義します。#}	
-{% block title %}{{ result.name }}遺言書{% endblock %}	
+ {#HTMLのタイトルを定義します。#}
+{% block title %}{{ result.name }}遺言書{% endblock %}
 
- {# このページに適用させたいスタイルシートを指定します #}	
-{% block header_scripts_add %}	
-{% endblock %}	
+ {# このページに適用させたいスタイルシートを指定します #}
+{% block header_scripts_add %}
+{% endblock %}
 
- {#ここから表示したい情報を記載します。#}	
-{% block page_content %}	
-  <div class = "how-to-write-will">	
+ {#ここから表示したい情報を記載します。#}
+{% block page_content %}
+  <div class = "how-to-write-will">
+    <br>
+    <h3 class ="text-primary">〜遺言書の書き方〜</h3><br>
 
-   </div>	
-{% endblock %}	
+    <div class = "explanation">
+      <h5>遺言書とは...</h5>
+      <p>残された相続人同士が揉めないように、被相続人（亡くなった方）が最後の思いを書面に残すものすなわち、お手紙のようなものです。</p>
+      <p>主に</p>
 
- {#共通フッタとして追記したい情報を記載します。#}	
+    </div>
+   </div>
+{% endblock %}
+
+ {#共通フッタとして追記したい情報を記載します。#}
 {% block footer_scripts_add %}{% endblock %}

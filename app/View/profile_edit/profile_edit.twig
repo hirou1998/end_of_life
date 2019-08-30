@@ -6,19 +6,49 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200&display=swap" rel="stylesheet">
-<style>
-    div{ font-family: 'Noto Serif JP', serif; }
-</style>
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-<p>
-  aaa
-</p>
+<div class="container">
+  <form method="post" action="/profile_edit/" enctype="multipart/form-data">
+    <div>
+      <p>
+        user_set_name
+      </p>
+      <input name="user_set_name" type="text" value="{{profile.user_set_name}}" />
+    </div>
+    <div>
+      <p>
+        birthday
+      </p>
+      <input name="birthday" type="date" value="{{profile.birthday}}" />
+    </div>
+    <div>
+      <p>
+        location
+      </p>
+      <input name="location" type="text" value="{{profile.location}}" />
+    </div>
+    <div>
+      <p>
+        user_set_name
+      </p>
+      <textarea name="introduction" type="text"/>{{profile.introduction}}</textarea>
+    </div>
+    <div>
+      <p>
+        img
+      </p>
+      <input name="img" type="file" value="{{profile.img}}" />
+      {% if profile.img == "" %}
+      {% else %}
+      <img src="{{ profile.img }}" />
+      {% endif %}
+    </div>
+    <button type="submit">SAVE</button>
+  </form>
+</div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

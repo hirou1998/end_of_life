@@ -47,6 +47,7 @@
 $(function(){
   $('.countup').click(function(){
       var target = $(this).attr('id')
+      //target.addClass('clicked').delay(1000).removeClass('clicked');
     $.ajax({
             type: 'GET',
             url: '/favorite/'+ $(this).attr('id'), //post送信を受けとるphpファイル

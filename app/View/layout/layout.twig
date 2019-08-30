@@ -19,18 +19,21 @@
         .mb10 {
             margin: 0 0 10px 0;
         }
+
         body {
             font-size: .875rem;
         }
 
         .feather {
-        width: 16px;
-        height: 16px;
-        vertical-align: text-bottom;
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
         }
-        #content{
+
+        #content {
             margin-left: 220px;
         }
+
         /*
         * サイドバー
         */
@@ -38,52 +41,31 @@
         nav.sidebar {
             position: fixed;
             display: block;
-            max-width: 200px;
-            height:100vh;
-            z-index:999;
+            height: 100vh;
+            z-index: 999;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
         }
-        button.navbar-toggler{
-            right:5vw;
-            position:absolute;
+
+        button.navbar-toggler {
+            right: 5vw;
+            position: absolute;
         }
 
-        @media screen and (max-width:1024px){
-            nav.sidebar{
-                width:  100vw;
-                height: 64px;
-                max-width: 100vw;
-            }
-            nav.sidebar>div>ul{
-                width:100vw;
-                background-color: white;
-            }
-        .list-unstyled {
-            line-height: 1;
-        }
-            #content{
-                max-width:96vw;
-                margin-left: 2px;
-                margin-top:64px;
-            }
-        }
 
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="/assets/css/litera.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body role="document">
-<div class="container-fluid">
-    <div class="row">
 {#メニューをセットします#}
-    {% include 'menu/menu.twig' %}
-        {# メインコンテンツを配置します#}
-        <div id="content">
-            {% block page_content %}{% endblock %}
-        </div>
-    </div>
+{% include 'menu/menu.twig' %}
+{# メインコンテンツを配置します#}
+<div id="content">
+    {% block page_content %}{% endblock %}
+</div>
+</div>
 </div>
 <!-- BootStrap3 -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

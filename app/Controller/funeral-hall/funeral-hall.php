@@ -40,23 +40,25 @@ $app->get('/funeral-hall', function (Request $request, Response $response) {
   if(!empty($data['name'])){
     $query_name = $data['name'];
     if($query_name == "京都"){
-      $where1 = "WHERE funeral_hall_name LIKE '$query_name%'";
+      $where1 = "funeral_hall_name LIKE '$query_name%'";
     } else {
-      $where1 = "WHERE funeral_hall_name LIKE '%$query_name%'";
+      $where1 = "funeral_hall_name LIKE '%$query_name%'";
     }
   }
   if(!empty($data['adress'])){
     $query_adress = $data['adress'];
     if($query_adress == "京都"){
-      $where2 = "WHERE funeral_hall_adress LIKE '$query_adress%'";
+      $where2 = "funeral_hall_adress LIKE '$query_adress%'";
     } else {
-      $where2 = "WHERE funeral_hall_adress LIKE '%$query_adress%'";
+      $where2 = "funeral_hall_adress LIKE '%$query_adress%'";
     }
   }
   if (!empty($query_name) && !empty($query_adress)) {
-    $where = $where1 . "AND" . $where2;
-  } else{
-    $where = $where1 . $where2;
+    $where = "WHERE " . $where1 . " AND " . $where2;
+  } else if (!empty($query_name) || !empty($query_adress)){
+    $where = "WHERE " . $where1 . $where2;
+  } else {
+    $where = "";
   }
 
   $sql = "SELECT * FROM funeral_hall " . $where;

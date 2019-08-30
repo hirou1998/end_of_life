@@ -51,20 +51,18 @@
                                 <div class="card-body">
                                     <li class="list-group-item">
 
-                                        {% if result.funeral_hall_url | length > 3 and result.funeral_hall_url is not empty %}
-                                            URL：<a href="{{ result.funeral_hall_url }}" class="card-link">{{ result.funeral_hall_url }}</a>
-                                        {% else %}
-                                            URLはありません
-                                        {% endif %}
-                                    </li>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </table>
-                </div>
+                {% if result.funeral_hall_url | length > 3 and result.funeral_hall_url is not empty %}
+                URL：<a href="{{result.funeral_hall_url}}" class="card-link">{{result.funeral_hall_url}}</a>
+                {% else %}
+                URLはありません
+                {% endif %}
+              </li>
             </div>
-        </div>
+          </div><br>
+        {% endfor %}
+      </table>
     </div>
 {% endblock %}
+
 {#共通フッタとして追記したい情報を記載します。#}
 {% block footer_scripts_add %}{% endblock %}

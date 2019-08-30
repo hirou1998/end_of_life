@@ -39,6 +39,11 @@
 
 
                 <div>
+                  {% if graveyard_list == false %}
+                    <p>
+                      検索結果はありません。
+                    </p>
+                  {% else %}
                     <table>
                         {% for result in graveyard_list %}
                             <div class="card" style="width">
@@ -62,6 +67,7 @@
                             </div><br>
                         {% endfor %}
                     </table>
+                    {% endif %}
                 </div>
             </div>
         </div>

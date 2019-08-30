@@ -51,35 +51,27 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="container">
+    <div class="row">
+        <video id="bg-video" src="/assets/img/bg.mp4" poster="poster.jpg" autoplay loop></video>
+        <div id="filter">
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h1>終活</h1>
+        <br>
         <div class="row">
-            <video id="bg-video" src="/assets/img/bg.mp4" poster="poster.jpg" autoplay loop></video>
-            <div id="filter">
+            <div class="col">
+                人生の最後に、自分らしさを。
             </div>
         </div>
-
-            <div class="text-center">
-                <h1>終活</h1>
-                <br>
-                <div class="row">
-                    <div class="col">
-                        人生の最後に、自分らしさを。
-                    </div>
-                </div>
-
-                <br>
-                <div class="row">
-                    <div class="col">
-                        みんなに会えてよかった。
-                    </div>
-                </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                みんなに会えてよかった。
             </div>
         </div>
     </div>
-
-    </div>
-    </div>
-
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

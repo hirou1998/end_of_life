@@ -10,6 +10,52 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
+    <div class="container">
+        <br>
+
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inlineFormInput" class="sr-only">斎場名</label>
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="斎場名" name = "name">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form>
+
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inlineFormInput" class="sr-only">住所</label>
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="住所" name = "adress">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
+        </form><br>
+
+    </div>
+    <div>
+      <table>
+        {% for result in graveyard_list %}
+          <div class="card" style="width">
+            <div class="card-body">
+              <h5 class="card-title">斎場名</h5>{{result.graveyard_name}}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">住所：{{result.graveyard_adress}}</li>
+              <li class="list-group-item">TEL：{{result.graveyard_telephone}}</li>
+            </ul>
+            <div class="card-body">
+              <li class="list-group-item">
+
+                {% if result.graveyard_url | length > 3 and result.graveyard_url is not empty %}
+                URL：<a href="{{result.graveyard_url}}" class="card-link">{{result.graveyard_url}}</a>
+                {% else %}
+                URLはありません
+                {% endif %}
+              </li>
+            </div>
+          </div>
+        {% endfor %}
+      </table>
+    </div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}

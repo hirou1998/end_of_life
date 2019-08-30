@@ -57,7 +57,7 @@ $app->get('/funeral-hall', function (Request $request, Response $response) {
 
   //dd($data['funeral_hall_list']);
   //dd($sql);
-  var_dump($data['funeral_hall_list']);
+  //var_dump($data['funeral_hall_list']);
 
     // Render index view
     return $this->view->render($response, 'funeral-hall/funeral-hall.twig', $data);

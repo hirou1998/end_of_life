@@ -6,11 +6,12 @@ use Slim\Http\Response;
 // TOPページのコントローラ
 $app->get('/funeral-hall', function (Request $request, Response $response) {
 
-  $funeral_hall_table = $this->db;
-
+  // $funeral_hall_table = $this->db;
+  //
   // $html = file_get_contents('https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei24/');
   // $data = array();
   // $doc = phpQuery::newDocument($html);
+  // $i = 0;
   // foreach($doc[".prt-table table tbody tr"] as $row){
   //   $name = pq($row)->find("td:eq(0)")->text();
   //   $adress = pq($row)->find("td:eq(1)")->text();
@@ -18,6 +19,7 @@ $app->get('/funeral-hall', function (Request $request, Response $response) {
   //   $url = pq($row)->find("td:eq(5)")->text();
   //
   //   if($name){
+  //     $i++;
   //     $funeral_hall_table->insert('funeral_hall',
   //                               array("funeral_hall_name" => $name,
   //                                     "funeral_hall_adress" => $adress,
@@ -27,7 +29,8 @@ $app->get('/funeral-hall', function (Request $request, Response $response) {
   //
   //   array_push($data, [$name, $adress, $telephone, $url]);
   // }
-  //
+  // dd($i);
+
   //$data = [];
   $data = $request->getQueryParams();
 
@@ -36,11 +39,19 @@ $app->get('/funeral-hall', function (Request $request, Response $response) {
 
   if(!empty($data['name'])){
     $query_name = $data['name'];
-    $where1 = "WHERE funeral_hall_name LIKE '%$query_name%'";
+    if($query_name == "京都"){
+      $where1 = "WHERE funeral_hall_name LIKE '$query_name%'";
+    } else {
+      $where1 = "WHERE funeral_hall_name LIKE '%$query_name%'";
+    }
   }
   if(!empty($data['adress'])){
     $query_adress = $data['adress'];
-    $where2 = "WHERE funeral_hall_adress LIKE '%$query_adress%'";
+    if($query_adress == "京都"){
+      $where2 = "WHERE funeral_hall_adress LIKE '$query_adress%'";
+    } else {
+      $where2 = "WHERE funeral_hall_adress LIKE '%$query_adress%'";
+    }
   }
   if (!empty($query_name) && !empty($query_adress)) {
     $where = $where1 . "AND" . $where2;

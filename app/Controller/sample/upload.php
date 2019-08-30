@@ -13,10 +13,15 @@ $app->post('/upload', function (Request $request, Response $response) {
 
     $user_id=1;
 
-    $files = $request->getUploadedFiles();
-    $file = $files["image"]->file;
+    //$basePath = $request->getUri();
+   //dd($basePath);
 
-    $file_path = "public/assets/img/profile-image-" . $user_id . ".png";
+    $files = $request->getUploadedFiles();
+    dd($files);
+    $file = $files["image"]->file;
+    //dd($file);
+
+    $file_path = "/opt/intern/app/team-b1/project/public/assets/img/profile-image-" . $user_id . ".png";
     copy($file, $file_path);
 
 

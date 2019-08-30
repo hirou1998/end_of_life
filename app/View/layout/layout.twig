@@ -5,6 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     {% block header_scripts_add %}{% endblock %}
+    <!-- BootStrap3 -->
+    <style>
+        .box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .list-unstyled {
+            line-height: 2;
+        }
+
+        .mb10 {
+            margin: 0 0 10px 0;
+        }
+
+        body {
+            font-size: .875rem;
+        }
+
+        .feather {
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
+        }
+
+        #content {
+            margin-left: 220px;
+        }
+
+        /*
+        * サイドバー
+        */
+
+        nav.sidebar {
+            position: fixed;
+            display: block;
+            height: 100vh;
+            z-index: 999;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        button.navbar-toggler {
+            right: 5vw;
+            position: absolute;
+        }
+/*
+        li .nav-link{
+          display: inline-block;
+          padding: 0.6em 2em;
+          margin: 0 0 1em;
+          background: #fff;
+          /* border: 0.1875em solid #333; */
+          /* color: #EDAE00; */
+          /* cursor: pointer;
+          transition: all 0.3s ease 0s;
+        } */
+
+        li .nav-link:hover {
+          background: #EDAE00;
+          color : #F2EDE1;
+        }
+
+        a.dropdown-item:hover{
+          background: #F2EDE1;
+          color: #EDAE00;
+        }
+
+        button a{
+          color : #EDAE00;
+        }
+
+        .col-sm-12 .page-header h1{
+          color : #EDAE00;
+        }
+
+        .navbar-nav a{
+          color : #EDAE00;
+        }
+
+        .navbar-nav a:hover{
+          color : #FF7F50;
+        }
+
+
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>

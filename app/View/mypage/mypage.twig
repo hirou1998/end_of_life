@@ -17,13 +17,13 @@
             <br><h4><i class="fa fa-user-circle" aria-hidden="true"></i> MY page</h4>
     <div>
       <br>
-      <h5 class="text-primary">私のエンディングノート <span class="badge badge-secondary"><i class="fas fa-pray" aria-hidden="true"></i> {{ my_ending_note.favorite }}</span></h5>
+      <h5 class="text-warning">私のエンディングノート <span class="badge badge-secondary"><i class="fas fa-pray" aria-hidden="true"></i> {{ my_ending_note.favorite }}</span></h5>
 
     <div class="row">
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</h4>
+              <h4 class="text-warning card-title"><i class="fas fa-history" aria-hidden="true"></i> 人生の歴史</h4>
               <p class="card-text">{{ my_ending_note.my_history }}</p>
             </div>
           </div>
@@ -35,7 +35,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="fas fa-user-friends" aria-hidden="true"></i> 親族や友人知人</h4>
+              <h4 class="text-warning card-title"><i class="fas fa-user-friends" aria-hidden="true"></i> 親族や友人知人</h4>
               <p class="card-text">{{ my_ending_note.my_friends_relatives }}</p>
             </div>
           </div>
@@ -47,7 +47,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="fa fa-home" aria-hidden="true"></i> 財産</h4>
+              <h4 class="text-warning card-title"><i class="fa fa-home" aria-hidden="true"></i> 財産</h4>
               <p class="card-text">{{ my_ending_note.my_property }}</p>
             </div>
           </div>
@@ -59,7 +59,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</h4>
+              <h4 class="text-warning card-title"><i class="fa fa-hospital-o" aria-hidden="true"></i> 終末期の介護や医療に関する要望</h4>
               <p class="card-text">{{ my_ending_note.my_desire }}</p>
             </div>
           </div>
@@ -71,7 +71,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="far fa-comment"　aria-hidden="true"></i> 葬儀に関する要望</h4>
+              <h4 class="text-warning card-title"><i class="far fa-comment"　aria-hidden="true"></i> 葬儀に関する要望</h4>
               <p class="card-text">{{ my_ending_note.my_funeral }}</p>
             </div>
           </div>
@@ -83,7 +83,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="text-primary card-title"><i class="fas fa-info-circle" aria-hidden="true"></i> その他</h4>
+              <h4 class="text-warning card-title"><i class="fas fa-info-circle" aria-hidden="true"></i> その他</h4>
                 {% if my_ending_note.my_comment %}
                   <p class="card-text">{{ my_ending_note.my_comment }}</p>
                 {% else %}
@@ -94,13 +94,14 @@
         </div>
       </div>
       <br>
-      <button type="button" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline-warning">
         <a href="my-ending-note/edit/" style="text-decoration: none;">エンディングノートを編集</a>
       </button>
-      <button type="button" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline-warning">
         <a href="/profile_edit/" style="text-decoration: none;">プロフィールを変更</a>
       </button>
     </div>
+  </div>
 </div>
 {% endblock %}
 

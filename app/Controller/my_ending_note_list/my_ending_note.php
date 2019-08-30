@@ -10,7 +10,7 @@ $app->get('/my_ending_note_list/', function (Request $request, Response $respons
     $data = $request->getQueryParams();
 
     // $this->db->select("");
-    $sql = "select * from user inner join my_ending_note on user.id = my_ending_note.user_id;";
+    $sql = "select * from user inner join my_ending_note on user.id = my_ending_note.user_id left join profile on user.id = profile.user_id";
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
 

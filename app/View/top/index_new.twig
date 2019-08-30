@@ -1,0 +1,87 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}終活{% endblock %}
+
+{# 適用させたいスタイルシートのパスを指定します #}
+{% block header_scripts_add %}
+    <style>
+        /* ----- 背景用の動画ファイル ----- */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+        }
+
+        #filter {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -10;
+            background-size: cover;
+            background-color: #FFF;
+            opacity: 0.55
+        }
+
+        /* ----- 背景の上に表示させたいコンテンツ ----- */
+        .header-title {
+            z-index: 2; /*必ず必要*/
+
+        }
+
+        /* ----- グラデーションオーバーレイ ----- */
+        .wrap {
+            height: 100vh;
+            background: linear-gradient(-45deg, rgba(93, 124, 15, 0.4), rgba(35, 99, 16, 0.6));
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+    <div class="container">
+        <div class="row">
+            <video id="bg-video" src="/assets/img/bg.mp4" poster="poster.jpg" autoplay loop></video>
+            <div id="filter">
+            </div>
+        </div>
+
+            <div class="text-center">
+                <h1>終活</h1>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        人生の最後に、自分らしさを。
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col">
+                        みんなに会えてよかった。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+{% block footer_scripts_add %}
+{% endblock %}

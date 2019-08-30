@@ -6,55 +6,126 @@
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ffdecdd0b6.js"></script>
+    <style>
+        .image-round1 {
+            border-radius: 50%;
+        }
+
+    </style>
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-        <div class="box">
-            <div class="row">
-                <div>
-                    <h2 class="text-center">エンディングノートタイムライン</h2>
-                        <div class="card-columns">
-                        {% for item in list %}
-                            {% if item.is_public %}
-                                <ul class="card bg-secondary mb-3">
-                                    <li class="list-unstyled card-header text-white">{{ item.name}}さん</li>
-                                    <li class="list-group-item card-text">歴史：{{ item.my_history}}</li>
-                                    <li class="list-group-item card-text">友達：{{ item.my_friends_relatives}}</li>
-                                    <li class="list-group-item card-text">資産：{{ item.my_property}}</li>
-                                    <li class="list-group-item card-text">望み：{{ item.my_desire}}</li>
-                                    <li class="list-group-item card-text">どんな葬式：{{ item.my_funeral}}</li>
-                                    <li class="list-group-item card-text">コメント：{{ item.my_comment}}</li>
-                                    <li class="list-group-item card-text">いいね：
-                                        <button class="btn btn-dark countup" id="{{item.user_id}}" type="button" name="count"><i class="fas fa-pray"></i>{{ item.favorite}}</button>
-                                    </li>
-                                </ul>
-                            {% endif %}
-                        {% endfor %}
-                        </div>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header text-center">
+                    <h1>エンディングノートタイムライン</h1>
+                </div>
+                <hr>
+                <br>
+                <div class="container">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="col">
+                                        {% for item in list %}
+                                            {% if item.is_public %}
+                                                <div class="col-sm-12 card">
+                                                    <div class="row">
+                                                        　
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <img width="80" class="image-round1" src="{{ item.img }}" alt="{{ item.name }} さん">
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <i class="fas fa-user"></i> {{ item.name }} さん<br>
+                                                            <i class="fas fa-globe"></i> {{ item.location }} <br>
+                                                            <i class="fas fa-birthday-cake"></i> {{ item.birthday | date("Y年m月d日") }}
+                                                        </div>
+                                                        <div class="col">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">歴史</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_history | nl2br }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">友達</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_friends_relatives }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">資産</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_property }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">望み</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_desire }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">どんな葬式</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_funeral }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">コメント</label>
+                                                        <div class="col-sm-10">
+                                                            {{ item.my_comment |nl2br}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-2 col-form-label">いいね</label>
+                                                        <div class="col-sm-10">
+                                                            <button class="btn btn-dark countup" id="{{ item.user_id }}" type="button" name="count"><i class="fas fa-pray"></i> {{ item.favorite }}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <hr>
+                                                <br>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
 {% block footer_scripts_add %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(function(){
-  $('.countup').click(function(){
-      var target = $(this).attr('id')
-    $.ajax({
-            type: 'GET',
-            url: '/favorite/'+ $(this).attr('id'), //post送信を受けとるphpファイル
-        }).done(function(data){
-            $("#"+target).html('<i class="fas fa-pray"></i>'+ data);
-        }).fail(function(msg) {
-            console.log('Ajax Error');
-        });
-    });
-});</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.countup').click(function () {
+                var target = $(this).attr('id')
+                $.ajax({
+                    type: 'GET',
+                    url: '/favorite/' + $(this).attr('id'), //post送信を受けとるphpファイル
+                }).done(function (data) {
+                    $("#" + target).html('<i class="fas fa-pray"></i> ' + data);
+                }).fail(function (msg) {
+                    console.log('Ajax Error');
+                });
+            });
+        });</script>
 {% endblock %}
